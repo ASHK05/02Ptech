@@ -1,0 +1,41 @@
+def menu():
+    print("----------------")
+    print("ICE CREAM ORDER")
+    print("----------------")
+    print("These are your choices")
+    print("0 - chocolate")
+    print("1 - Vanilla")
+    print("2 - Strawberry")
+    print("3 - Hokey Pokey")
+   
+def get_order():
+    flavor = input("Choose a flavor: ")
+    size = int(input("Would you prefer 1 or 2 litres (1/2) "))
+    quantity = int(input("How many containers would you like: "))
+    return flavor, size, quantity
+
+def calculate_order(size, quantity):
+    if size == 1:
+        total_cost = quantity * PRICE_1L
+    else:
+        total_cost = quantity * PRICE_2L
+        return total_cost
+   
+def display_order(flavor, size, quantity, total_cost):
+    print("")
+    print("Icecream Flavor: ", flavor)
+    print("Litre Size: ", size)
+    print("Quantity: ", quantity)
+    print("Litre Price: ", total_cost / quantity)
+    print("Total cost: ", total_cost)
+   
+   
+def main():
+    menu()
+    flavor, size, quantity = get_order()
+    total_cost = calculate_order(size, quantity)
+    display_order(flavour, size, quantity, total_cost)
+   
+PRICE_1L= 10.00
+PRICE_2L= 15.00
+main()
