@@ -1,0 +1,57 @@
+def menu():
+    print("LOLLY SHOP")
+    
+print("  ")
+print("All packets are 200g and cost $2.00 each, Spend $10.00 or more and get 10% discount")
+print("  ")
+    
+print("LOLLY MENU")
+print("0 - chocolate")
+print("1 - Vanilla")
+print("2 - Strawberry")
+print("3 - Hokey Pokey")
+
+def get_input():
+    
+    order = []
+    quantity = int(input("How many packets would you like : "))
+    
+    for i in range(0, quantity):
+        order.append(int(input("What lollies would you like to order - Enter Number: ")))
+        print("")
+        return order, quantity
+    
+def cal(order, quantity):
+    amt_due = PRICE * quantity
+    if amt_due > 10:
+        dis_amt = amt_due * DISCOUNT
+        total_due = amt_due - dis_amt
+    else:
+        dis_amt = 0
+        total_due = amt_due
+        print("There is no discount ")
+    return total_due, amt_due, dis_amt
+
+def display_order(order, quantity, amt_due, dis_amt, total_due, lollies):
+    
+    print("-----------------------------------")
+    print("          Order Details          ")
+    print("-----------------------------------")
+    for i in range (0, len(order)):
+        print(lollies[order[i]])
+    
+    print("Quantity:", quantity)
+    print("Amount Due:$",amt_due)
+    print("Discount: $", dis_amt)
+    print("Total Cost: $",total_due)
+    
+def main():
+    
+    lollies=menu()
+    order, quantity= get_input()
+    total_due, amt_due, dis_amt = cal(order, quantity)
+    display_order(order, quantity, amt_due, dis_amt, total_due, lollies)
+    
+PRICE = 2.00
+DISCOUNT = 0.10
+main()
