@@ -1,0 +1,26 @@
+def get_input():
+    price = 10
+    print("ticket cost : $10")
+    amount = int(input("how many tickets would you like to buy?"))
+    return price, amount
+
+def calc_total (amount, price):
+    amount_due = price*amount
+    GST_due = amount_due*GST
+    total_due = amount_due + GST
+    return amount_due, total, GST_due
+
+def display_sale_summary(amount_due, total-due, GST_due):
+    print("number of tickets bought :", amount)
+    print("GST due :", GST_due)
+    print("total due ;", total_due)
+
+def main():
+  price, amount = get_input()
+  amount_due, total_due, GST_due = calc_totals(amount, price)
+  display_sale_sum(amount_due, total_due, GST_due)
+   
+
+GST = .15
+TICKET_PRICE = 10.00
+main()
