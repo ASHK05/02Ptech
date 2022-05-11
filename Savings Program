@@ -1,0 +1,39 @@
+list incomplete:::
+def main():
+
+    list_integer = [6, 17, 2, 15, 0, 3]
+    total = sum(list_integer)
+    length = len(list_integer)
+    print("The sum is", total)
+    return total, length
+   
+main()
+
+goal savings modfied:::
+
+def check_goal(savings, goal):
+    if savings > goal:
+        return True
+   
+    elif savings == goal:
+        return True
+   
+    else:
+        return False
+
+def savings_goal():
+    goal = int(input("Enter your goal savings amount, please use numbers: "))
+    savings = int(input("Enter your current savings, please use numbers: "))
+    goal_reached = check_goal(savings, goal)
+
+    if goal_reached == True:
+        print("you have reached your goal")
+    else:
+        print("you have not reached your goal")
+       
+def main():
+    print("this program will check your savings goal")
+    print("")
+    savings_goal()
+   
+main()
